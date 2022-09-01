@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 @st.cache
 def load_df():
-      df = pd.read_csv("/Users/ashleynewman/Downloads/archive/crime.csv", encoding='unicode_escape')
+      df = pd.read_csv("/Users/Downloads/archive/crime.csv", encoding='unicode_escape')
       df = df.rename(columns={
           'Lat': 'lat',
           'Long': 'lon'
