@@ -1,0 +1,26 @@
+
+
+def int_to_str(i):
+	digits = '0123456789' 						# 1 operation
+	if i == 0:									# 1 operation
+		return '0':								# 1 operation
+	result = ''									# 1 operation
+	while i > 0:								# (A) start iteration.
+		result = digits[i % 10] + result		# (B) 
+		i = i // 10								# (C) affects iteration condition
+	return result
+
+
+
+
+- First 4 operations happen only one time, not iterating => O(4) 
+
+- (A) As per (C) statement, each time 'i' is divided (no remainder) by 10. So each itearation, the process will reduce by 10 times. This means the number of iterations is log10(i)
+
+- (B) Assignment + calculating index (i%10) + accessing array + addition operation => O(4)
+
+- (C) per iteration, will do 2 operations (one for division and one for assignment ) => O(2)
+
+So we have:
+O(4) + O( log10( [O(2) + O(4)] * i ) )
+which we can approximate to O( log10(i) )
